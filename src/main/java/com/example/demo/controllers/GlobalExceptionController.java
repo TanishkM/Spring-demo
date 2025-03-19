@@ -1,7 +1,6 @@
 package com.example.demo.controllers;
 
 import com.example.demo.Constants;
-import com.google.gson.Gson;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -17,7 +16,7 @@ public class GlobalExceptionController {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, String>> handleGlobalException(Exception ex, WebRequest request) {
         Map<String, String> response = new HashMap<>();
-        response.put(Constants.MESSAGE, ex.getMessage());
+        response.put(Constants.ERROR_MESSAGE, ex.getMessage());
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

@@ -9,6 +9,9 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @NoArgsConstructor
+
+
+@Table(name = "users")
 public class UserDO {
 
     @Id
